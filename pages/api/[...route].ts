@@ -20,6 +20,15 @@ app.get('/products', (c:any) => {
 })
 
 
+app.get('/is', (c:any) => {
+  const {cat} = c.req.query()
+  console.log('???', c?.req?.query().cat)
+  console.log('query', cat)
+  return c.json({
+    message: `is ${cat}`,
+  })
+})
+
 
 
 export default handle(app, '/api')

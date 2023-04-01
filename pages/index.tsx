@@ -13,8 +13,10 @@ export default function Home() {
 
 
     const fetchProducts = async () => {
-      const res = await fetch('/api/products')
+      // /api/query/mohammed
+      const res = await fetch(`/api/is?cat=adidas`)  
       const { message } = await res.json()
+      console.log('message:', message)
       setProductsMessage(message)
     }
 
