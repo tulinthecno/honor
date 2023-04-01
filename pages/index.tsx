@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import axios from 'axios'
 
 export default function Home() {
   const [message, setMessage] = useState()
@@ -14,8 +15,9 @@ export default function Home() {
 
     const fetchProducts = async () => {
       // /api/query/mohammed
-      const res = await fetch(`/api/is?cat=adidas`)  
-      const { message } = await res.json()
+      // {headers:{'token':'maher'}}
+      const res = await fetch(`/api/is?cat=adidas`  , {headers:{'token':'maher'}} )  
+      const { message } = await res?.json()
       console.log('message:', message)
       setProductsMessage(message)
     }

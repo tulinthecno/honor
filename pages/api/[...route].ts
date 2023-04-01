@@ -12,6 +12,8 @@ const app = new Hono()
 
 app.use(async (c:any, next:any) => {
   console.log('middleware 1 start' , c.req.query()?.cat)
+  const userAgent = c.req.header('token')
+  console.log('header: ' + userAgent)
   if(c.req.query()?.cat === 'adidas')
   await next()
   else (
