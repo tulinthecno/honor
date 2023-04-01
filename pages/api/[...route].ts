@@ -7,6 +7,15 @@ export const config = {
 
 const app = new Hono()
 
+app.use(async (_, next) => {
+  console.log('middleware 1 start')
+  await next()
+  console.log('middleware 1 end')
+})
+
+
+
+
 app.get('/hello', (c:any) => {
   return c.json({
     message: 'Hello from Hono!',
