@@ -1,5 +1,8 @@
 import { Hono } from 'hono'
 import { handle } from 'hono/nextjs'
+import { poweredBy } from 'hono/powered-by'
+import { logger } from 'hono/logger'
+import { basicAuth } from 'hono/basic-auth'
 
 export const config = {
   runtime: 'edge',
@@ -7,13 +10,24 @@ export const config = {
 
 const app = new Hono()
 
-app.use(async (_, next) => {
-  console.log('middleware 1 start')
+app.use(async (c:any, next:any) => {
+  console.log('middleware 1 start' , c.req.query()?.cat)
+  if(c.req.query()?.cat === 'adidas')
   await next()
+  else (
+    console.log('ERRRRRRRRRORRRR')
+  )
   console.log('middleware 1 end')
 })
 
 
+// app.use(
+//   '/products/*',
+//   basicAuth({
+//     username: 'hono',
+//     password: 'acoolproject',
+//   })
+// )
 
 
 app.get('/hello', (c:any) => {
