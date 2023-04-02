@@ -50,7 +50,7 @@ app.get('/is', (c:any) => {
   console.log('???', c?.req?.query().cat)
   console.log('query', cat)
 
-  new Response({message:'Thank you for comming'})
+  // new Response({message:'Thank you for comming'})
 
   // return c.body('Thank you for comming')
 
