@@ -49,9 +49,18 @@ app.get('/is', (c:any) => {
   const {cat} = c.req.query()
   console.log('???', c?.req?.query().cat)
   console.log('query', cat)
+
+  new Response({message:'Thank you for comming'})
+
+  // return c.body('Thank you for comming')
+
+
   return c.json({
     message: `is ${cat}`,
   })
+
+ 
+
 })
 
 
