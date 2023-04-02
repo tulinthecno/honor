@@ -27,7 +27,7 @@ export default function Home() {
     fetchProducts()
   }, [])
 
-  if (!productsMessage) return <p>Loading...</p>
+  if (!productsMessage) return <p>Loading... hello.</p>
 
   return <p>{productsMessage}</p>
 }
