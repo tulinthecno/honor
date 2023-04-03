@@ -3,5 +3,20 @@ import '@unocss/reset/tailwind.css'
 import 'uno.css'
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+  
+  <>
+
+<script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></script>
+
+
+  
+ 
+  <Component {...pageProps} />
+
+  </>
+
+  )
 }
+
+
