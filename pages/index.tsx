@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 
+
 export default function Home() {
   const [message, setMessage] = useState()
   const [productsMessage, setProductsMessage] = useState()
@@ -27,7 +28,7 @@ export default function Home() {
     fetchProducts()
   }, [])
 
-  if (!productsMessage) return <p>Loading... hello three</p>
+  if (!productsMessage) return <p >Loading... hello three</p>
 
-  return <p>{productsMessage}</p>
+  return <p className='btn2'>{productsMessage}</p>
 }

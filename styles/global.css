@@ -1,5 +1,52 @@
 
-.custom-div {
-    @apply text-center bg-emerald my-0 font-medium;
+.custom {
+    @apply text-center  sm:bg-purple md:bg-yellow  bg-blue my-0 font-medium;
   }
   
+
+  .bear {
+    @apply mt-2 pl-5 bg-red text-blue;
+  }
+
+
+
+  .grid {
+    --uno: grid grid-cols-2 bg-dark ;
+  }
+  @screen xs {
+    .grid {
+      --uno: grid-cols-1 ;
+    }
+  }
+  @screen sm {
+    .grid {
+      --uno: grid-cols-3;
+    }
+  }
+
+
+  @screen xs {
+
+ .custom-div { 
+    @apply  bg-cyan
+ }
+
+
+  }
+
+
+  
+  @screen lg {
+
+    .custom-div { 
+       @apply  bg-dark
+    }
+   
+   
+     }
+
+
+
+     .home-main{
+      @apply bg-blue
+  }

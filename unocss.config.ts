@@ -1,18 +1,12 @@
-import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts } from 'unocss'
+import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts  , transformerDirectives } from 'unocss'
 import transformerAttributifyJsx from '@unocss/transformer-attributify-jsx'
 
-// @apply screens theme add libary
-import transformerDirectives from '@unocss/transformer-directives'
-
-
-// import initUnocssRuntime from '@unocss/runtime'
-
-// initUnocssRuntime({ /* options */ })
 
 
 
 export default defineConfig({
   presets: [
+    presetUno(),
     presetAttributify(),
   
     presetIcons(),
@@ -22,7 +16,7 @@ export default defineConfig({
         sans: 'Roboto',
       },
     }),
-    presetUno(),
+   
   ],
   shortcuts: [
     ['btn', 'px-4 py-1 rounded inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50'],
@@ -32,7 +26,22 @@ export default defineConfig({
   // -----can write css without class
   transformers: [
     transformerAttributifyJsx(),
-    transformerDirectives(),
+    //  transformerDirectives(),
+    
+
+     transformerDirectives({
+      applyVariable: ['--uno' , '@apply'],
+    })
+
+
+
+// @apply screens themes 
+// transformerDirectives({
+
+//    applyVariable: ['--at-apply', '--uno-apply', '--uno' , '@apply' , '@screen'],
+
+//  })
+
   ],
 
 
@@ -43,22 +52,3 @@ export default defineConfig({
 
 
 
-
-
-
-
-
-
-
-
-
-
-// unocss.config.ts
-// import { defineConfig, presetAttributify, presetIcons, presetUno, presetWebFonts } from 'unocss'
-
-// export default defineConfig({
-//   presets: [
-//     presetUno(),
-//     // ...
-//   ],
-// })
