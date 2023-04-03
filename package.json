@@ -20,6 +20,7 @@
     "@types/react-dom": "18.0.10",
     "@unocss/preset-attributify": "link:..\\..\\packages\\preset-attributify",
     "@unocss/transformer-attributify-jsx": "^0.50.6",
+    "@unocss/transformer-directives": "^0.50.6",
     "@unocss/webpack": "^0.50.6",
     "typescript": "4.9.4",
     "unocss": "^0.50.6"

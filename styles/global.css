@@ -1,0 +1,5 @@
+
+.custom-div {
+    @apply text-center bg-emerald my-0 font-medium;
+  }
+  
